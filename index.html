@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clave ilustrada de identificación: Aedes no nativos en Colombia</title>
+  <meta name="description" content="Clave dicotómica interactiva con figuras integradas en cada paso para identificación de Aedes en Colombia. Auditada contra Rueda 2004, WRBU y fuentes primarias por especie."/>
+  <meta name="author" content="Richard Hoyos-López — IIBT, Universidad de Córdoba, Colombia"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#fff;--bg2:#f6f5f0;--bg3:#eeede8;--text:#1a1a18;--text2:#5a5a56;--text3:#8a8a84;--border:rgba(0,0,0,0.10);--border2:rgba(0,0,0,0.20);--r:8px;--rl:12px;--f:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--bl50:#E6F1FB;--bl6:#185FA5;--tl50:#E1F5EE;--tl6:#0F6E56;--rd50:#FCEBEB;--rd6:#A32D2D;--am50:#FAEEDA;--am6:#854F0B;--am8:#633806;--gn50:#EAF3DE;--gn6:#3B6D11;--pu50:#EEEDFE;--pu6:#534AB7;--co50:#FAECE7;--co6:#993C1D;--pk50:#FBEAF0;--pk6:#993556;--gy50:#F1EFE8;--gy6:#5F5E5A}
+    @media(prefers-color-scheme:dark){:root{--bg:#1c1c1a;--bg2:#252522;--bg3:#2e2e2b;--text:#e8e8e2;--text2:#a8a8a0;--text3:#6a6a64;--border:rgba(255,255,255,0.10);--border2:rgba(255,255,255,0.22);--bl50:#042C53;--bl6:#85B7EB;--tl50:#04342C;--tl6:#5DCAA5;--rd50:#501313;--rd6:#F09595;--am50:#412402;--am6:#EF9F27;--am8:#FAC775;--gn50:#173404;--gn6:#97C459;--pu50:#26215C;--pu6:#AFA9EC;--co50:#4A1B0C;--co6:#F0997B;--pk50:#4B1528;--pk6:#ED93B1;--gy50:#2C2C2A;--gy6:#B4B2A9}}
+    body{font-family:var(--f);background:var(--bg3);color:var(--text);min-height:100vh}
+    header{background:var(--bg);border-bottom:0.5px solid var(--border);padding:1.25rem 1.5rem}
+    .hi{max-width:760px;margin:0 auto;display:flex;align-items:flex-start;gap:14px}
+    .hl{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:var(--tl50);display:flex;align-items:center;justify-content:center}
+    .ht{font-size:17px;font-weight:500;color:var(--text);line-height:1.3}
+    .hs{font-size:12px;color:var(--text2);margin-top:3px}
+    .hb{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .lang-switch{display:flex;gap:6px;margin-top:10px}
+    .lang-link{font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;border:0.5px solid var(--border2);text-decoration:none;color:var(--text2);background:var(--bg2)}
+    .lang-link.active{background:var(--tl50);border-color:var(--tl6);color:var(--tl6)}
+    .badge{font-size:11px;font-weight:500;padding:2px 8px;border-radius:var(--r);border:0.5px solid}
+    .bt{background:var(--tl50);color:var(--tl6);border-color:var(--tl6)}
+    .bb{background:var(--bl50);color:var(--bl6);border-color:var(--bl6)}
+    .bv{background:var(--am50);color:var(--am6);border-color:var(--am6)}
+    main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    .pw{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.25rem;overflow:hidden}
+    .pb{height:100%;background:var(--tl6);border-radius:2px;transition:width 0.35s ease}
+    .bc{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1rem;font-size:11px;color:var(--text3)}
+    .cr{background:var(--bg);padding:2px 8px;border-radius:var(--r);cursor:pointer;border:0.5px solid var(--border);color:var(--text2);transition:border-color 0.12s}
+    .cr:hover{border-color:var(--border2);color:var(--text)}
+    .sep{opacity:0.4;line-height:2.2}
+    .sc{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:1rem}
+    .sb{padding:1.25rem 1.5rem 1rem}
+    .sn{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:5px}
+    .sq{font-size:15px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:6px}
+    .sd{font-size:13px;color:var(--text2);line-height:1.55}
+    .fa{background:var(--bg2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:1rem 1.5rem}
+    .fl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:10px}
+    .fg{display:grid;gap:12px}
+    .fg.c2{grid-template-columns:1fr 1fr}
+    .fg.c3{grid-template-columns:1fr 1fr 1fr}
+    .fi{text-align:center}
+    .figimg{display:block;width:100%;height:auto;border-radius:10px;border:0.5px solid var(--border);background:var(--bg);cursor:zoom-in}
+    .fn{font-size:10px;font-weight:500;color:var(--text3);margin-bottom:4px;font-style:italic;line-height:1.4}
+    .fc{font-size:11px;color:var(--text2);margin-top:6px;line-height:1.4}
+    .hw{padding:0.75rem 1.5rem 0}
+    .hb2{display:flex;gap:8px;align-items:flex-start;background:var(--bg2);border-radius:var(--r);padding:9px 12px}
+    .ht2{font-size:12px;color:var(--text2);line-height:1.5}
+    .ow{padding:0.75rem 1.5rem 1.25rem;display:flex;flex-direction:column;gap:8px}
+    .op{display:flex;align-items:flex-start;gap:10px;background:var(--bg);border:0.5px solid var(--border);border-radius:var(--r);padding:10px 14px;cursor:pointer;text-align:left;color:var(--text);transition:border-color 0.12s,background 0.12s}
+    .op:hover{border-color:var(--border2);background:var(--bg2)}
+    .op:focus-visible{outline:2px solid var(--bl6);outline-offset:2px}
+    .ol{font-size:12px;font-weight:500;color:var(--text3);min-width:18px;padding-top:2px;flex-shrink:0}
+    .ot{font-size:14px;line-height:1.5}
+    .os{font-size:11px;color:var(--text3);margin-top:2px}
+    .rc{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:1rem}
+    .rt{padding:1.25rem 1.5rem 1rem}
+    .rh{display:flex;gap:12px;align-items:flex-start;margin-bottom:1rem}
+    .si{width:48px;height:48px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .rn{font-size:18px;font-weight:500;font-style:italic;color:var(--text);line-height:1.3}
+    .rm{font-size:13px;color:var(--text2);margin-top:2px}
+    .tg{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
+    .tag{font-size:11px;font-weight:500;padding:3px 9px;border-radius:var(--r)}
+    .ta{background:var(--rd50);color:var(--rd6)}
+    .tm{background:var(--am50);color:var(--am6)}
+    .tb{background:var(--gn50);color:var(--gn6)}
+    .te{background:var(--tl50);color:var(--tl6)}
+    .tv{background:var(--bl50);color:var(--bl6)}
+    .ts{background:var(--bg2);color:var(--text2);border:0.5px solid var(--border)}
+    .rnt{background:var(--bg2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:1rem 1.5rem}
+    .dv{border:none;border-top:0.5px solid var(--border);margin:0.75rem 0}
+    .stl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:4px}
+    .sbd{font-size:13px;color:var(--text2);line-height:1.6}
+    .ch{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+    .chip{font-size:11px;padding:3px 8px;border-radius:var(--r);background:var(--bg2);color:var(--text2);border:0.5px solid var(--border)}
+    .ck{border-color:var(--bl6);color:var(--bl6);background:var(--bl50)}
+    .wn{background:var(--am50);border:0.5px solid var(--am6);border-radius:var(--r);padding:9px 12px;font-size:12px;color:var(--am8);margin-bottom:0.75rem;line-height:1.5}
+    /* Reference section */
+    .ref-section{background:var(--bg2);border-top:0.5px solid var(--border);padding:1rem 1.5rem}
+    .ref-title{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:8px}
+    .ref-list{display:flex;flex-direction:column;gap:6px}
+    .ref-item{font-size:11px;color:var(--text2);line-height:1.5;display:flex;gap:8px;align-items:flex-start}
+    .ref-dot{flex-shrink:0;color:var(--text3);margin-top:1px}
+    .ref-link{color:var(--bl6);text-decoration:none;font-weight:500}
+    .ref-link:hover{text-decoration:underline}
+    .ref-badge{display:inline-block;font-size:10px;background:var(--bg);border:0.5px solid var(--border);border-radius:4px;padding:1px 5px;margin-left:4px;color:var(--text3)}
+    /* WRBU notice */
+    .wrbu-note{background:var(--am50);border:0.5px solid var(--am6);border-radius:var(--r);padding:8px 12px;font-size:11px;color:var(--am8);margin-top:6px;line-height:1.5}
+    .ac{padding:0.75rem 1.5rem 1.25rem;display:flex;flex-wrap:wrap;gap:8px}
+    .btn{font-size:13px;padding:6px 14px;border:0.5px solid var(--border2);background:transparent;border-radius:var(--r);cursor:pointer;color:var(--text);transition:background 0.12s}
+    .btn:hover{background:var(--bg2)}
+    .lead{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1.25rem 1.5rem;margin-bottom:1rem}
+    .eyebrow{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:8px}
+    .lead h2{font-size:21px;line-height:1.25;font-weight:600;margin-bottom:10px}
+    .lead p{font-size:14px;line-height:1.65;color:var(--text2);margin-bottom:10px}
+    .lead p:last-child{margin-bottom:0}
+    .grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-bottom:1rem}
+    .panel{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1.1rem 1.25rem}
+    .panel h3{font-size:15px;font-weight:600;line-height:1.35;margin-bottom:8px}
+    .panel p{font-size:13px;line-height:1.6;color:var(--text2)}
+    .pillrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .pill{font-size:11px;font-weight:500;padding:4px 9px;border-radius:999px;background:var(--bg2);border:0.5px solid var(--border);color:var(--text2)}
+    .tl{background:var(--tl50);border-color:var(--tl6);color:var(--tl6)}
+    .rd{background:var(--rd50);border-color:var(--rd6);color:var(--rd6)}
+    .am{background:var(--am50);border-color:var(--am6);color:var(--am6)}
+    .tbl{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:1rem}
+    .tblh{padding:1rem 1.25rem;border-bottom:0.5px solid var(--border);background:var(--bg2)}
+    .tblh h3{font-size:15px;font-weight:600;margin-bottom:4px}
+    .tblh p{font-size:12px;line-height:1.55;color:var(--text2)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;border-top:0.5px solid var(--border);text-align:left;vertical-align:top}
+    th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--text3);background:var(--bg)}
+    td{font-size:12px;line-height:1.5;color:var(--text2)}
+    .risk-high{color:var(--rd6);font-weight:600}
+    .risk-mid{color:var(--am6);font-weight:600}
+    .risk-low{color:var(--gn6);font-weight:600}
+    .agenda{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1.1rem 1.25rem;margin-bottom:1rem}
+    .agenda h3{font-size:15px;font-weight:600;margin-bottom:10px}
+    .agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .agenda-item{background:var(--bg2);border-radius:var(--r);padding:10px 11px}
+    .agenda-item strong{display:block;font-size:12px;color:var(--text);margin-bottom:4px}
+    .agenda-item span{font-size:12px;line-height:1.55;color:var(--text2)}
+    .app-shell{margin-top:1.25rem}
+    .app-intro{margin-bottom:0.9rem}
+    .app-intro h3{font-size:16px;font-weight:600;margin-bottom:4px}
+    .app-intro p{font-size:13px;line-height:1.6;color:var(--text2)}
+    .tool-chooser{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1.1rem 1.25rem;margin-bottom:1rem}
+    .tool-chooser h3{font-size:16px;font-weight:600;margin-bottom:5px}
+    .tool-chooser p{font-size:13px;line-height:1.6;color:var(--text2);margin-bottom:12px}
+    .tool-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .tool-btn{appearance:none;border:0.5px solid var(--border2);background:var(--bg2);color:var(--text);padding:10px 14px;border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;transition:background 0.12s,border-color 0.12s,color 0.12s}
+    .tool-btn:hover{background:var(--bg)}
+    .tool-btn.active{background:var(--tl50);border-color:var(--tl6);color:var(--tl6)}
+    .tool-view{display:none}
+    .tool-view.active{display:block}
+    .atlas{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1rem 1.1rem;margin-bottom:1rem}
+    .atlas h4{font-size:14px;font-weight:600;margin-bottom:5px}
+    .atlas p{font-size:12px;line-height:1.55;color:var(--text2);margin-bottom:10px}
+    .atlas-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .atlas-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--r);overflow:hidden}
+    .atlas-card img{display:block;width:100%;height:auto;background:#dfe8ef;cursor:zoom-in}
+    .atlas-meta{padding:9px 10px}
+    .atlas-name{font-size:12px;font-weight:600;color:var(--text);line-height:1.35}
+    .atlas-note{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.45}
+    .plate-wrap{margin:0 1.5rem 1rem}
+    .plate-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--r);overflow:hidden}
+    .plate-card img{display:block;width:100%;height:auto;background:#dfe8ef;cursor:zoom-in}
+    .plate-meta{padding:10px 12px}
+    .plate-title{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);margin-bottom:4px}
+    .plate-copy{font-size:12px;color:var(--text2);line-height:1.55}
+    .zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);display:none;align-items:center;justify-content:center;padding:24px;z-index:9999}
+    .zoom-overlay.open{display:flex}
+    .zoom-dialog{position:relative;max-width:min(96vw,1400px);max-height:92vh;display:flex;flex-direction:column;gap:10px}
+    .zoom-close{position:absolute;top:-8px;right:-8px;width:38px;height:38px;border:none;border-radius:999px;background:var(--bg);color:var(--text);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.25)}
+    .zoom-image{display:block;max-width:100%;max-height:82vh;width:auto;height:auto;border-radius:12px;background:var(--bg);border:1px solid rgba(255,255,255,0.12)}
+    .zoom-caption{font-size:12px;line-height:1.5;color:#f0f0ec;text-align:center}
+    footer{max-width:760px;margin:0 auto;padding:1rem 1rem 2rem;font-size:11px;color:var(--text3);border-top:0.5px solid var(--border)}
+    footer a{color:var(--text2)}
+    footer p{margin-bottom:4px}
+    @media(max-width:720px){.grid2,.agenda-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.hi{flex-direction:column;gap:8px}.sb,.hw,.ow,.fa,.rt,.rnt,.ac,.ref-section,.lead,.panel,.tblh,.agenda,.plate-wrap{padding-left:1rem;padding-right:1rem}.fg.c3,.atlas-grid{grid-template-columns:1fr}th,td{padding:9px 10px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div class="hl" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="15" rx="5" ry="7.5" fill="#0F6E56" opacity="0.85"/><ellipse cx="12" cy="9" rx="3.5" ry="4.5" fill="#0F6E56"/><line x1="7" y1="12" x2="2" y2="8.5" stroke="#0F6E56" stroke-width="1.2"/><line x1="17" y1="12" x2="22" y2="8.5" stroke="#0F6E56" stroke-width="1.2"/><line x1="7" y1="15" x2="1" y2="15" stroke="#0F6E56" stroke-width="1"/><line x1="17" y1="15" x2="23" y2="15" stroke="#0F6E56" stroke-width="1"/></svg>
+    </div>
+    <div>
+      <div class="ht">Clave ilustrada de identificación — <em>Aedes</em> no nativos en Colombia</div>
+      <div class="hs">Figuras morfológicas integradas · 7 taxa · Auditada contra Rueda 2004, WRBU y fuentes primarias · Para biólogos y microbiólogos</div>
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <a class="lang-link active" href="index.html" lang="es">ES</a>
+        <a class="lang-link" href="index-en.html" lang="en">EN</a>
+      </div>
+      <div class="hb">
+        <span class="badge bt">Vigilancia entomológica</span>
+        <span class="badge bb">Salud pública</span>
+        <span class="badge bv">Versión auditada v2.0</span>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="app-shell">
+    <div class="app-intro">
+      <div class="eyebrow">Herramienta aplicada</div>
+      <h3>Clave dicotomica morfologica interactiva</h3>
+      <p>La clave usa caracteres observables en campo o laboratorio basico y toma a <em>Ae. albopictus</em> como especie de referencia conocida para facilitar contraste diagnostico con taxones emergentes.</p>
+    </div>
+    <div class="tool-chooser">
+      <h3>Selecciona un modo de consulta</h3>
+      <p>Elige entre una ruta guiada por caracteres diagnósticos o un atlas visual rápido para contraste por especie. El contexto epidemiológico y la justificación científica de la herramienta aparecen más abajo en la página.</p>
+      <div class="tool-actions">
+        <button id="btnKey" class="tool-btn" onclick="showTool('key')">Clave dicotómica</button>
+        <button id="btnAtlas" class="tool-btn" onclick="showTool('atlas')">Atlas visual para identificación</button>
+      </div>
+    </div>
+    <div id="atlasView" class="tool-view">
+      <div class="atlas" aria-labelledby="atlas-visual">
+        <h4 id="atlas-visual">Atlas visual rapido por especie</h4>
+        <p>Estas laminas sintetizan los caracteres mas utiles para vigilancia entomologica. Funcionan como apoyo visual rapido antes o despues de recorrer la clave dicotomica.</p>
+        <div class="atlas-grid">
+          <div class="atlas-card"><img src="assets/species-plates/albopictus.png" alt="Lamina diagnostica de Aedes albopictus"/><div class="atlas-meta"><div class="atlas-name"><em>Aedes albopictus</em></div><div class="atlas-note">Especie de referencia conocida en Colombia.</div></div></div>
+          <div class="atlas-card"><img src="assets/species-plates/vittatus.png" alt="Lamina diagnostica de Aedes vittatus"/><div class="atlas-meta"><div class="atlas-name"><em>Aedes vittatus</em></div><div class="atlas-note">Mayor interes para corredor Caribe y puertos.</div></div></div>
+          <div class="atlas-card"><img src="assets/species-plates/mediovittatus.png" alt="Lamina diagnostica de Aedes mediovittatus"/><div class="atlas-meta"><div class="atlas-name"><em>Aedes mediovittatus</em></div><div class="atlas-note">Perfil caribeno y afinidad con huecos de arboles.</div></div></div>
+          <div class="atlas-card"><img src="assets/species-plates/koreicus.png" alt="Lamina diagnostica de Aedes koreicus"/><div class="atlas-meta"><div class="atlas-name"><em>Aedes koreicus</em></div><div class="atlas-note">Separacion fina frente a <em>Ae. japonicus</em>.</div></div></div>
+          <div class="atlas-card"><img src="assets/species-plates/japonicus.png" alt="Lamina diagnostica de Aedes japonicus"/><div class="atlas-meta"><div class="atlas-name"><em>Aedes japonicus</em></div><div class="atlas-note">Incluye referencias adultas y larvarias.</div></div></div>
+          <div class="atlas-card"><img src="assets/species-plates/queenslandensis.png" alt="Lamina diagnostica de Aedes aegypti variedad queenslandensis"/><div class="atlas-meta"><div class="atlas-name"><em>Ae. aegypti</em> var. <em>queenslandensis</em></div><div class="atlas-note">Forma palida de alto interes en la frontera amazonica.</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="keyView" class="tool-view">
+      <div id="app" role="main" aria-live="polite"></div>
+    </div>
+  </section>
+  <section class="lead">
+    <div class="eyebrow">Concepto central del articulo</div>
+    <h2>De la dispersion documentada a la amenaza latente</h2>
+    <p><em>Aedes albopictus</em> mostro que, cuando una invasion vectorial se detecta tarde, la ventana preventiva ya se ha estrechado. Al mismo tiempo, dejo un manual metodologico: rutas de entrada, infeccion natural, metagenomica vectorial y modelacion de nicho.</p>
+    <p>Esta clave se integra a esa logica de anticipacion. La propuesta es aplicar de forma proactiva las lecciones de <em>Ae. albopictus</em> a los <em>Aedes</em> no nativos que aun no estan establecidos en Colombia, pero ya circulan en la vecindad regional o en corredores plausibles de ingreso.</p>
+  </section>
+  <section class="grid2">
+    <article class="panel">
+      <div class="eyebrow">Marco interpretativo</div>
+      <h3><em>Ae. albopictus</em> como modelo de referencia</h3>
+      <p>El caso de <em>Ae. albopictus</em> permite separar dos niveles de lectura: lo ya documentado en Colombia y America Latina, y las lecciones transferibles para vigilancia temprana. Esa distincion organiza el manuscrito y justifica que la clave taxonomica sea una herramienta operativa, no un anexo ornamental.</p>
+      <div class="pillrow">
+        <span class="pill tl">Rutas de dispersion</span>
+        <span class="pill tl">Infeccion natural</span>
+        <span class="pill tl">Metagenomica</span>
+        <span class="pill tl">Modelacion de nicho</span>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="eyebrow">Criterios de priorizacion</div>
+      <h3>Como se jerarquiza el riesgo</h3>
+      <p>La priorizacion propuesta combina proximidad geografica, compatibilidad ecologica, historial invasivo, relevancia vectorial y dificultad de deteccion. Bajo ese marco, <em>Ae. aegypti</em> var. <em>queenslandensis</em> y <em>Ae. vittatus</em> aparecen como amenazas mas inmediatas, aunque por rutas distintas.</p>
+      <div class="pillrow">
+        <span class="pill rd">Proximidad</span>
+        <span class="pill am">Corredores de entrada</span>
+        <span class="pill">Compatibilidad ecologica</span>
+        <span class="pill">Deteccion temprana</span>
+      </div>
+    </article>
+  </section>
+  <section class="tbl" aria-labelledby="species-watch">
+    <div class="tblh">
+      <div class="eyebrow">Escenario actual</div>
+      <h3 id="species-watch">Cinco especies bajo vigilancia prioritaria</h3>
+      <p>Esta matriz ancla la narrativa del manuscrito y sirve como puente hacia la clave morfologica. <em>Ae. albopictus</em> se mantiene en la herramienta como especie de referencia ya conocida en Colombia.</p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Especie</th>
+          <th>Presencia mas cercana</th>
+          <th>Arbovirus de interes</th>
+          <th>Via probable de entrada</th>
+          <th>Riesgo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><em>Ae. vittatus</em></td>
+          <td>Jamaica, Cuba, Mexico-Yucatan</td>
+          <td>DENV, ZIKV, CHIKV, YFV</td>
+          <td>Corredor Caribe, puertos y trafico maritimo</td>
+          <td class="risk-mid">Medio-alto</td>
+        </tr>
+        <tr>
+          <td><em>Ae. mediovittatus</em></td>
+          <td>Puerto Rico y Antillas Mayores</td>
+          <td>DENV 1-3, ZIKV</td>
+          <td>Conectividad caribena insular y aerea</td>
+          <td class="risk-mid">Medio</td>
+        </tr>
+        <tr>
+          <td><em>Ae. koreicus</em></td>
+          <td>Europa y Norteamerica</td>
+          <td>WNV, Batai, dirofilariasis</td>
+          <td>Comercio internacional, llantas y ornamentales</td>
+          <td class="risk-low">Bajo-latente</td>
+        </tr>
+        <tr>
+          <td><em>Ae. japonicus</em></td>
+          <td>Norteamerica</td>
+          <td>WNV, LACV</td>
+          <td>Comercio internacional, llantas y ornamentales</td>
+          <td class="risk-low">Bajo-latente</td>
+        </tr>
+        <tr>
+          <td><em>Ae. aegypti</em> var. <em>queenslandensis</em></td>
+          <td>Macapa, Brasil</td>
+          <td>ZIKV, CHIKV, DENV</td>
+          <td>Corredor fluvial y urbano amazonico</td>
+          <td class="risk-high">Alto</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="agenda">
+    <div class="eyebrow">Agenda de investigacion</div>
+    <h3>Aplicar el manual de <em>albopictus</em> antes del establecimiento</h3>
+    <div class="agenda-grid">
+      <div class="agenda-item"><strong>Vigilancia en rutas de entrada</strong><span>Puertos, llantas usadas, plantas ornamentales, nodos aereos y corredor del Darien con trampeo focalizado y barcoding COI como piso minimo.</span></div>
+      <div class="agenda-item"><strong>Infeccion natural</strong><span>Diferenciar con rigor evidencia de campo, deteccion molecular y competencia vectorial para patogenos priorizados.</span></div>
+      <div class="agenda-item"><strong>Metagenomica vectorial</strong><span>Explorar microbioma, viroma y coinfecciones sin restringir la vigilancia a paneles patogeno-especificos.</span></div>
+      <div class="agenda-item"><strong>Modelacion de nicho</strong><span>Evaluar variables climaticas y antropicas para Colombia tropical y comparar limitaciones de GARP, MaxEnt y BioClim.</span></div>
+    </div>
+  </section>
+</main>
+<div id="zoomOverlay" class="zoom-overlay" aria-hidden="true">
+  <div class="zoom-dialog" role="dialog" aria-modal="true" aria-label="Image zoom viewer">
+    <button id="zoomClose" class="zoom-close" type="button" aria-label="Close zoom viewer">×</button>
+    <img id="zoomImage" class="zoom-image" alt=""/>
+    <div id="zoomCaption" class="zoom-caption"></div>
+  </div>
+</div>
+<footer>
+  <p><strong>Citar como:</strong> Hoyos-López R. <em>et al.</em> (en preparación). De la dispersión documentada a la amenaza latente: <em>Aedes albopictus</em> como modelo y agenda de investigación para <em>Aedes</em> no nativos emergentes en Colombia. <em>Acta Biológica Colombiana.</em></p>
+  <p><strong>Clave base:</strong> Rueda LM. 2004. Pictorial keys for the identification of mosquitoes associated with Dengue Virus Transmission. <em>Zootaxa</em> 589:1–60. <a href="https://doi.org/10.5281/zenodo.169153" target="_blank">DOI:10.5281/zenodo.169153</a> (acceso abierto).</p>
+  <p><strong>Advertencia:</strong> Ilustraciones esquemáticas orientativas. Confirmar bajo estereomicroscopio con claves especializadas. Confirmar molecularmente antes de reportar especies nuevas para Colombia.</p>
+  <p style="margin-top:8px"><a href="https://github.com/[usuario]/aedes-key-colombia" target="_blank">GitHub</a> · Licencia <a href="LICENSE">CC BY 4.0</a></p><p style="margin-top:6px">Developed by Richard Onalbi Hoyos Lopez · Instituto de Investigaciones Biológicas del Trópico (IIBT), Universidad de Córdoba, Colombia · <a href="https://orcid.org/0000-0003-1195-681X" target="_blank">ORCID</a></p>
+</footer>
+<script>
+/* ══ FIGURES FROM EXTERNAL PLATES ══════════════════════════ */
+function I(src,alt){return`<img class="figimg" src="${src}" alt="${alt}" loading="lazy"/>`}
+const F={
+  scutumLines:()=>I("Planchas aedes/1 scutum lines.png","Scutum with longitudinal lines"),
+  scutumNoLines:()=>I("Planchas aedes/2 scutumNoLines.png","Scutum with diagnostic lyre-shape pattern"),
+  t4compare:()=>I("Planchas aedes/3 t4 compare.png","Comparison of hind tarsomere 4 between Aedes koreicus and Aedes japonicus"),
+  toneCompare:()=>I("Planchas aedes/4 toneCompare.png","Thoracic tone comparison between Aedes koreicus and Aedes japonicus"),
+  lyra:()=>I("Planchas aedes/5 lyra.png","Lyre-shaped scutal pattern comparison"),
+  vittatusScutum:()=>I("Planchas aedes/6 vittatusScutum.png","Aedes vittatus scutum with three anterior pairs of pale spots"),
+  alboStripe:()=>I("Planchas aedes/7 Albostripe.png","Continuous median stripe from head to scutum in Aedes albopictus"),
+  aegyptiChars:()=>I("Planchas aedes/8 aegyptiChars.png","Diagnostic plate for Aedes aegypti"),
+  midfemurAegypti:()=>I("Planchas aedes/9 midfemurAegypti.png","Mid femur with longitudinal white stripe in Aedes aegypti"),
+  colorCompare:()=>I("Planchas aedes/10 ColorCompare.png","Color comparison between Aedes aegypti sensu stricto and queenslandensis form"),
+  amazonMap:()=>I("Planchas aedes/11 AmazonMap.png","Amazon surveillance map highlighting Leticia and Amazon Trapezoid"),
+  vittatusTriptic:()=>I("Planchas aedes/12 vittatusTriptic.png","Aedes vittatus triptych showing proboscis, scutum, and hind tibia"),
+  vittatusClypeus:()=>I("Planchas aedes/13 vittatusClypeus.png","Aedes vittatus clypeus with bilateral pale patches"),
+  medioOcc:()=>I("Planchas aedes/14 medioOcc.png","Median white occipital band in Aedes mediovittatus"),
+  medioVsAlbo:()=>I("Planchas aedes/15 medioVsAlbo.png","Comparison of stripe position in Aedes mediovittatus and Aedes albopictus"),
+  tibia:()=>I("Planchas aedes/16 tibia.png","Median pale spot on hind tibia in Aedes vittatus"),
+  aegyptiHead:()=>I("Planchas aedes/17 aegyptiHead.png","Aedes aegypti head-thorax pattern without continuous stripe from head")
+};
+
+/* ══ CLAVE — PASOS CORREGIDOS ══════════════════════════════ */
+const K={
+  1:{q:"¿El escutum (dorso del tórax) tiene líneas longitudinales amarillas o bronceadas paralelas sobre fondo negro?",d:"Examine el dorso del tórax bajo buena luz o lupa 10×. Busque bandas paralelas de escamas claras que recorren el escutum de adelante hacia atrás — como rayas longitudinales sobre fondo negro.",h:"Gire el espécimen bajo luz lateral fría. Si hay escamas faltantes, busque residuos del patrón en el tejido de base. Este carácter discrimina el grupo japonicus/koreicus (líneas) de todo el resto.",figs:[{n:"Escutum con líneas (Ae. japonicus / koreicus)",s:F.scutumLines(),c:"Líneas doradas o bronceadas paralelas sobre fondo negro"},{n:"Escutum sin líneas paralelas (Ae. aegypti / albopictus / vittatus...)",s:F.scutumNoLines(),c:"Lira, franja medial u otro patrón — no líneas paralelas"}],cols:"c2",a:{t:"Sí — líneas paralelas amarillas o bronceadas claramente visibles en el escutum",s:"",n:2},b:{t:"No — escutum con lira, franja medial, manchas pequeñas u otro patrón",s:"",n:4}},
+  /* CORRECTED step 2: T4 is primary, tone is secondary */
+  2:{q:"Examine el cuarto tarsómero del tarso posterior (pata trasera) — ¿tiene una banda basal pálida completa y bien definida?",d:"El tarsómero 4 del tarso posterior es el carácter diagnóstico primario entre estas dos especies. En Ae. koreicus la banda basal pálida es ancha, completa y claramente visible. En Ae. japonicus es muy tenue, reducida o ausente. El tono del escutum (dorado brillante vs. bronceado) es orientativo pero variable con la iluminación — úselo como confirmación.",h:"Use lupa estereoscópica para este carácter. En especímenes dañados recurra a COI barcoding (~11% de divergencia genética). La coloración del escutum puede verse diferente según la iluminación — no la use como único criterio.",figs:[{n:"Tarsómero 4 posterior — CARÁCTER PRIMARIO",s:F.t4compare(),c:"Banda basal completa = koreicus (✓) · Reducida/ausente = japonicus (✗)"},{n:"Tono del escutum — carácter orientativo secundario",s:F.toneCompare(),c:"Dorado brillante orienta a koreicus · Bronceado orienta a japonicus"}],cols:"c2",a:{t:"T4 posterior con banda basal pálida COMPLETA y bien definida (+ líneas preferentemente doradas)",s:"→ Ae. koreicus",n:"koreicus"},b:{t:"T4 posterior con banda basal reducida o ausente (+ líneas preferentemente bronceadas)",s:"→ Ae. japonicus",n:"japonicus"}},
+  4:{q:"¿El escutum tiene una marca en forma de lira — dos líneas curvas simétricas de escamas plateadas?",d:"La marca en lira se parece a la letra Ω abierta o una V invertida con brazos curvos, formada por dos líneas simétricas de escamas plateadas o blancas. Es el carácter del subgénero Stegomyia: dengue, Zika, chikungunya.",h:"Si las escamas del escutum están dañadas, examine el mesepimeron lateral del tórax y los tarsos. En Ae. aegypti y albopictus los tarsos tienen anillos blancos muy marcados, confirmando que es Stegomyia.",figs:[{n:"Lira plateada — Stegomyia (Ae. aegypti o albopictus)",s:F.lyra(),c:"Dos líneas curvas simétricas plateadas que convergen hacia el escutelo"},{n:"Sin lira — manchas pares (Ae. vittatus) u otro patrón",s:F.vittatusScutum(),c:"3 pares de manchas pequeñas bilaterales — patrón de Ae. vittatus"}],cols:"c2",a:{t:"Sí — marca en lira plateada o blanca bien visible en el escutum",s:"",n:5},b:{t:"No — escutum con manchas pequeñas bilaterales, patrón pálido difuso u otro",s:"",n:7}},
+  5:{q:"¿Hay una franja blanca medial recta que va continuamente desde la cabeza hasta el escutum?",d:"Ae. albopictus tiene una raya blanca recta y única que empieza en el vértice de la cabeza y continúa sin interrupción sobre el escutum. Ae. aegypti tiene la lira en el escutum pero sin esa franja continua desde la cabeza. Como carácter secundario: en Ae. aegypti el mesepimeron tiene dos parches de escamas blancas SEPARADOS; en Ae. albopictus forman un parche en V sin separación.",h:"La franja de albopictus es la más llamativa de todo el género. Si solo ve la lira en el escutum sin continuación hacia la cabeza es Ae. aegypti. En especímenes dañados use el mesepimeron (parches separados vs. en V) y el fémur medio (aegypti tiene franja longitudinal blanca; albopictus no).",figs:[{n:"Ae. albopictus — franja recta continua cabeza→escutum",s:F.alboStripe(),c:"Franja blanca medial recta desde el vértice — muy vistosa"},{n:"Ae. aegypti — lira + mesepimeron 2 parches separados",s:F.aegyptiChars(),c:"Lira en escutum · Mesepimeron con dos parches blancos SEPARADOS"}],cols:"c2",a:{t:"Franja blanca medial recta de la cabeza al escutum sin interrupción + escamas negras brillantes",s:"→ Ae. albopictus",n:"albopictus"},b:{t:"Lira en el escutum, sin franja continua desde la cabeza + mesepimeron con parches separados",s:"→ continuar con paso 6",n:6}},
+  6:{q:"¿La coloración general es negra brillante y contrastada, o más pálida/amarillenta? ¿De dónde proviene la colecta?",d:"Ae. aegypti típica tiene escamas negras brillantes con marcas blancas muy contrastadas. La variedad queenslandensis (forma pálida) tiene coloración general más amarillenta con escamas abdominales reducidas. La zona amazónica de colecta es clave para sospecharla.",h:"La distinción morfológica entre Ae. aegypti s.s. y var. queenslandensis NO es segura en campo. Si proviene de zona amazónica con coloración inusualmente pálida, SIEMPRE confirmar molecularmente antes de reportar.",figs:[{n:"Coloración: negro brillante vs. pálido/amarillento",s:F.colorCompare(),c:"Izquierda: Ae. aegypti s.s. · Derecha: var. queenslandensis (forma pálida)"},{n:"Zona de alerta amazónica",s:F.amazonMap(),c:"Leticia y Trapecio Amazónico: vigilancia prioritaria para queenslandensis"}],cols:"c2",a:{t:"Negro brillante con marcas blancas muy contrastadas — zona tropical general",s:"→ Ae. aegypti s.s.",n:"aegypti"},b:{t:"Coloración pálida o amarillenta + escamas reducidas + colectado en zona amazónica colombo-brasileña",s:"→ Ae. aegypti var. queenslandensis — confirmar molecularmente",n:"queenslandensis"}},
+  /* CORRECTED step 7: clypeus added as 4th character */
+  7:{q:"¿El espécimen tiene los 4 caracteres de Ae. vittatus: probóscide con escamas pálidas + 3 pares de manchas en escutum anterior + mancha blanca en punto medio de la tibia posterior (tercer par de patas) + parches blancos bilaterales en el clípeo?",d:"Examine los cuatro: (1) probóscide — escamas amarillo-pálidas salpicadas en la cara dorsal; (2) escutum anterior — 3 pares bilaterales de manchas blancas pequeñas; (3) tibia posterior (pata trasera) — mancha blanca conspicua en el punto medio exacto; (4) clípeo — parches bilaterales pequeños de escamas blancas. Fuente: WRBU species page + Tzuc-Dzul et al. 2025 (EID).",h:"La mancha en la tibia posterior (pata trasera = tercer par) es el más fácil en campo. El clípeo (placa frontal entre los ojos) confirma. Primera detección en América continental: México-Yucatán (2025), confirmada con COI — GenBank PX418072.",figs:[{n:"Los 3 caracteres diagnósticos del cuerpo",s:F.vittatusTriptic(),c:"Probóscide salpicada · 3 pares en escutum · mancha en tibia posterior"},{n:"Clípeo — 4° carácter diagnóstico (Tzuc-Dzul 2025)",s:F.vittatusClypeus(),c:"Parches blancos bilaterales en el clípeo — confirma la identificación"}],cols:"c2",a:{t:"Sí — los 4 caracteres: probóscide salpicada + manchas en escutum + mancha en tibia posterior + clípeo con parches",s:"→ Ae. vittatus",n:"vittatus"},b:{t:"No — probóscide uniformemente oscura; posible banda blanca en la parte posterior de la cabeza",s:"",n:9}},
+  9:{q:"¿Hay una banda blanca medial en el occipucio (parte posterior de la cabeza), y el espécimen proviene de zona caribeña o insular?",d:"Ae. mediovittatus tiene una banda blanca en el occipucio — parte posterior de la cabeza, no en el escutum. El hábitat preferencial son huecos de árboles en zona forestal caribeña. La procedencia del archipiélago de San Andrés y Providencia o del Caribe continental es relevante.",h:"No confundir con la franja de Ae. albopictus que está en el escutum (tórax). Si el espécimen no encaja claramente, conservar en etanol 95% a −20°C y enviar a identificación molecular al IIBT o INS.",figs:[{n:"Banda blanca en el occipucio — Ae. mediovittatus",s:F.medioOcc(),c:"Banda blanca en la cabeza (occipucio) — no en el escutum"},{n:"mediovittatus vs. albopictus: posición de la franja",s:F.medioVsAlbo(),c:"mediovittatus: franja en cabeza · albopictus: franja en escutum"}],cols:"c2",a:{t:"Sí — banda blanca en el occipucio + hábitat forestal/caribeño insular",s:"→ Ae. mediovittatus",n:"mediovittatus"},b:{t:"No — ningún carácter anterior concuerda → identificación molecular recomendada",s:"→ Aedes sp. — conservar y enviar a laboratorio",n:"unknown"}}
+};
+
+/* ══ REFERENCIAS POR ESPECIE ════════════════════════════════ */
+const REFS={
+  koreicus:[
+    {text:"ECDC Mosquito Factsheet: Ae. koreicus",url:"https://www.ecdc.europa.eu/en/disease-vectors/facts/mosquito-factsheets/aedes-koreicus",badge:"Clave morfológica"},
+    {text:"WRBU species page: Ae. koreicus",url:"https://wrbu.si.edu/vectorspecies/mosquitoes/koreicus",badge:"WRBU"},
+    {text:"Suter T et al. 2023. Geometric wing morphometrics to distinguish Ae. japonicus and Ae. koreicus. Parasit Vectors 16:403",url:"https://doi.org/10.1186/s13071-023-06038-y",badge:"T4 diferencial"},
+    {text:"Medlock JM et al. 2022. Invasive Ae. japonicus y koreicus: emerging risks in the Americas. Parasit Vectors 15:326",url:"https://doi.org/10.1186/s13071-022-05457-3",badge:"Riesgo LAC"}
+  ],
+  japonicus:[
+    {text:"ECDC Mosquito Factsheet: Ae. japonicus",url:"https://www.ecdc.europa.eu/en/disease-vectors/facts/mosquito-factsheets/aedes-japonicus",badge:"Clave morfológica"},
+    {text:"WRBU species page: Ae. japonicus",url:"https://wrbu.si.edu/vectorspecies/mosquitoes/japonicus",badge:"WRBU"},
+    {text:"Suter T et al. 2023. Parasit Vectors 16:403",url:"https://doi.org/10.1186/s13071-023-06038-y",badge:"T4 diferencial"},
+    {text:"Medlock JM et al. 2022. Parasit Vectors 15:326",url:"https://doi.org/10.1186/s13071-022-05457-3",badge:"Riesgo LAC"}
+  ],
+  albopictus:[
+    {text:"Rueda LM. 2004. Pictorial keys for mosquitoes — Dengue Virus Transmission. Zootaxa 589:1–60 (acceso abierto)",url:"https://doi.org/10.5281/zenodo.169153",badge:"Clave base"},
+    {text:"WRBU species page: Ae. albopictus",url:"https://wrbu.si.edu/vectorspecies/mosquitoes/albopictus",badge:"WRBU"},
+    {text:"Forattini OP. 1986. Identificação de Ae. (Stg.) albopictus no Brasil. Rev Saude Publica 20(3):244–245",url:"https://doi.org/10.1590/s0034-89101986000300009",badge:"Primera ID Brasil"},
+    {text:"Savage HM, Smith GC. 1994. Identification of damaged specimens of Ae. albopictus and Ae. aegypti. J Am Mosq Control Assoc 10(3):440–442",badge:"Especímenes dañados"}
+  ],
+  aegypti:[
+    {text:"Rueda LM. 2004. Pictorial keys for mosquitoes — Dengue Virus Transmission. Zootaxa 589:1–60 (acceso abierto)",url:"https://doi.org/10.5281/zenodo.169153",badge:"Clave base"},
+    {text:"WRBU species page: Ae. aegypti",url:"https://wrbu.si.edu/vectorspecies/mosquitoes/aegypti",badge:"WRBU"},
+    {text:"Consoli RAGB, Lourenço-de-Oliveira R. 1994. Principais mosquitos de importância sanitária no Brasil. Fiocruz, Rio de Janeiro",badge:"Clave LAC"},
+    {text:"Supriyono et al. 2023. Morphological characteristic of Ae. aegypti and Ae. albopictus. Biodiversitas 24:894–900",url:"https://doi.org/10.13057/biodiv/d240228",badge:"SEM"}
+  ],
+  vittatus:[
+    {text:"WRBU species page: Ae. vittatus",url:"https://wrbu.si.edu/index.php/vectorspecies/mosquitoes/ae_vittatus",badge:"WRBU — caracteres primarios"},
+    {text:"Tzuc-Dzul JC et al. 2025. Detection of Ae. vittatus, Yucatán, Mexico. Emerg Infect Dis 31(11)",url:"https://doi.org/10.3201/eid3111.251358",badge:"Primera detección N. América"},
+    {text:"Gutiérrez-Bugallo G et al. 2021. First report of Ae. vittatus and Oropouche in Cuba. Acta Trop 213:105739",url:"https://doi.org/10.1016/j.actatropica.2020.105739",badge:"Cuba 2019"}
+  ],
+  mediovittatus:[
+    {text:"Rueda LM. 2004. Pictorial keys — Región Americana incluye Ae. mediovittatus. Zootaxa 589:1–60",url:"https://doi.org/10.5281/zenodo.169153",badge:"Clave base"},
+    {text:"Poole-Smith BK et al. 2015. Vector competence of Ae. mediovittatus for dengue virus. PLoS Negl Trop Dis 9(2):e0003462",url:"https://doi.org/10.1371/journal.pntd.0003462",badge:"Competencia vectorial"},
+    {text:"Coquillett DW. 1906. Descripción original como Stegomyia mediovittata. Can Entomol 38",badge:"Descripción original"}
+  ],
+  queenslandensis:[
+    {text:"Ferreira-de-Freitas C et al. 2023. Ae. aegypti in the Brazilian Amazon. Mem Inst Oswaldo Cruz 118:e230045",url:"https://doi.org/10.1590/0074-02760230045",badge:"Amazonia 2024"},
+    {text:"WRBU species page: Ae. aegypti",url:"https://wrbu.si.edu/vectorspecies/mosquitoes/aegypti",badge:"WRBU"},
+    {text:"Theobald FV. 1910. A monograph of the Culicidae. Vol. 5. British Museum (Natural History), London",badge:"Descripción original"}
+  ],
+  unknown:[
+    {text:"Consoli RAGB, Lourenço-de-Oliveira R. 1994. Principales mosquitos de importância sanitária no Brasil. Fiocruz",badge:"Clave LAC"},
+    {text:"WRBU — Catálogo sistemático de Culicidae",url:"https://www.mosquitocatalog.org/",badge:"Catálogo taxonómico"}
+  ]
+};
+
+const WRBU_KEYS_NOTE=`<div class="wrbu-note">Las claves Lucid interactivas del WRBU (&gt;150 claves multi-entrada) estuvieron disponibles en wrbu.si.edu/vectorspecies/keys hasta el cierre de la unidad (marzo 2025). Algunas siguen accesibles en <a href="https://www.lucidcentral.org/editors-pick-animal-plant-and-mineral-identification-keys/mosquitoes/" target="_blank" class="ref-link">Lucidcentral.org</a>. Las páginas de especie del WRBU (enlazadas arriba) permanecen activas vía Smithsonian Institution.</div>`;
+
+/* ══ FICHAS POR ESPECIE ════════════════════════════════════ */
+const SP={
+  koreicus:{name:"Aedes koreicus",auth:"(Edwards, 1917)",common:"Mosquito coreano de matorral",ib:"#EEEDFE",ic:"#534AB7",risk:"b",rl:"Riesgo bajo-latente",st:"No reportado en Colombia ni Sudamérica",arb:["Encefalitis japonesa","Dirofilaria immitis","CHIKV (lab.)"],chars:[{t:"T4 posterior: banda basal pálida COMPLETA",k:true},{t:"Líneas dorado-amarillas en escutum (orientativo)",k:false},{t:"Parche subespiracular AUSENTE",k:false},{t:"Hembra más grande que Ae. japonicus",k:false}],dx:"El carácter diferencial más confiable frente a Ae. japonicus es la banda basal pálida completa en T4 posterior (ECDC; Suter 2023). El tono dorado del escutum es orientativo pero variable con la iluminación. En especímenes dañados: COI barcoding (~11% divergencia).",mol:"COI barcoding. Multiplex PCR (ITS2): fragmento 361 pb. Bases: BOLD y GenBank.",entry:"Llantas usadas y plantas ornamentales. Ruta potencial vía América del Norte (ya establecido allí)."},
+  japonicus:{name:"Aedes japonicus japonicus",auth:"(Theobald, 1901)",common:"Mosquito japonés de matorral",ib:"#E6F1FB",ic:"#185FA5",risk:"b",rl:"Riesgo bajo-latente",st:"Establecido en EE.UU., Canadá y Europa — no en Sudamérica",arb:["West Nile virus","La Crosse virus","CHIKV (lab.)"],chars:[{t:"T4 posterior: banda basal reducida o ausente",k:true},{t:"Líneas bronceadas en escutum (orientativo)",k:false},{t:"Parche subespiracular PRESENTE",k:false},{t:"Hábitos crepusculares, pica humanos",k:false}],dx:"T4 posterior sin banda es el carácter diferencial clave vs. Ae. koreicus (Suter 2023). El tono bronceado del escutum es orientativo. Confirmación: COI barcoding (fragmento 160 pb en multiplex).",mol:"COI barcoding. Multiplex PCR (ITS2): fragmento 160 pb. Cuatro subespecies con posible revisión taxonómica.",entry:"Comercio de llantas usadas y plantas ornamentales. Establecido en Pennsylvania (EE.UU.) desde 1998."},
+  albopictus:{name:"Aedes albopictus",auth:"(Skuse, 1894)",common:"Mosquito tigre asiático — ESTABLECIDO en Colombia",ib:"#E1F5EE",ic:"#0F6E56",risk:"e",rl:"Establecido — vector secundario",st:"Presente en Colombia — especie de referencia",arb:["DENV 1-4","CHIKV","ZIKV","YFV (lab.)"],chars:[{t:"Franja blanca medial recta cabeza→escutum",k:true},{t:"Escamas negras brillantes contrastadas",k:true},{t:"Mesepimeron: parche en V no separado",k:false},{t:"Fémur medio SIN franja longitudinal blanca",k:false}],dx:"Franja medial recta continua es el carácter más rápido (Rueda 2004, Fig. 17). En especímenes dañados: mesepimeron con parche en V no separado (vs. dos parches separados en aegypti) + fémur medio sin franja (Savage & Smith 1994).",mol:"COI barcoding. ITS1/ITS2. Multiplex PCR: 438 pb. Secuencias colombianas en BOLD/GenBank.",entry:"ESTABLECIDA — vía llantas usadas y plantas ornamentales. Modelo de ruta de invasión para LAC."},
+  aegypti:{name:"Aedes aegypti",auth:"(Linnaeus, 1762)",common:"Mosquito del dengue — VECTOR PRIMARIO en Colombia",ib:"#FAECE7",ic:"#993C1D",risk:"e",rl:"Vector primario — Colombia",st:"Establecido — vector principal de dengue nacional",arb:["DENV 1-4","ZIKV","CHIKV","YFV","OROV (sec.)"],chars:[{t:"Lira plateada en escutum (Rueda 2004 Fig. 13)",k:true},{t:"Mesepimeron: DOS parches blancos bien SEPARADOS",k:true},{t:"Fémur medio con franja longitudinal blanca anterior",k:true},{t:"T1–T4 con anillo basal; T5 generalmente más oscuro",k:false}],dx:"Los tres caracteres diagnósticos primarios según Rueda 2004: lira en escutum + mesepimeron con parches separados (Figs. 13–14) + fémur medio con franja blanca (Fig. 15). Clípeo con parches blancos bilaterales. T5 puede tener escamas pálidas en algunas poblaciones (Savage & Smith 1994).",mol:"COI, ND5, ITS1/ITS2. Referencia estándar Colombia.",entry:"Establecido. Presente en todas las regiones tropicales de Colombia bajo 2.200 m.s.n.m."},
+  vittatus:{name:"Aedes vittatus",auth:"(Bigot, 1861)",common:"Mosquito de hábitats rupestres",ib:"#EEEDFE",ic:"#3C3489",risk:"m",rl:"Riesgo medio-alto — corredor Caribe activo",st:"Cuba (2019), R. Dominicana (2020), Jamaica (2025), México-Yucatán (2025)",arb:["DENV 1-4","ZIKV","CHIKV","YFV","RVFV (potencial)"],chars:[{t:"Tibia posterior (3er par): mancha blanca en punto medio",k:true},{t:"3 pares manchas blancas en escutum anterior",k:true},{t:"Clípeo con parches bilaterales blancos",k:true},{t:"Probóscide con escamas pálidas en dorso",k:true}],dx:"Los 4 caracteres diagnósticos según WRBU + Tzuc-Dzul 2025 (EID): probóscide salpicada + 3 pares manchas escutales + mancha en tibia posterior (3er par) + parches blancos en clípeo. Primera detección en N. América (México 2025) — GenBank PX418072.",mol:"COI barcoding estándar. Ref.: GenBank PX418072 (México 2025). BOLD para comparación con linajes africanos y asiáticos.",entry:"Puertos caribeños colombianos (Cartagena, Barranquilla, Santa Marta). Corredor activo Cuba→Jamaica→¿Colombia?"},
+  mediovittatus:{name:"Aedes mediovittatus",auth:"(Coquillett, 1906)",common:"Mosquito caribeño de huecos de árboles",ib:"#FAEEDA",ic:"#854F0B",risk:"m",rl:"Riesgo medio — corredor Caribe",st:"Grandes Antillas — no reportado en Colombia continental",arb:["DENV 1-3","ZIKV"],chars:[{t:"Banda blanca medial en occipucio (carácter epónimo)",k:true},{t:"Hábitat forestal — huecos de árboles",k:true},{t:"Probóscide uniformemente oscura",k:false},{t:"Procedencia caribeña o insular",k:false}],dx:"Banda blanca medial en el occipucio es el carácter epónimo (Coquillett 1906). Rueda 2004 la incluye en su clave para la región americana (con aegypti y albopictus). Competencia vectorial para DENV comparable a Ae. aegypti (Poole-Smith 2015).",mol:"COI barcoding. Subgénero Gymnometopa bien separado molecularmente.",entry:"Tráfico marítimo/aéreo Caribe. Entrada probable vía San Andrés y Providencia."},
+  queenslandensis:{name:"Ae. aegypti var. queenslandensis",auth:"(Theobald, 1910)",common:"Forma pálida del dengue — variedad amazónica",ib:"#FBEAF0",ic:"#993556",risk:"a",rl:"Riesgo alto — frontera amazónica",st:"Detectada en Macapá, Brasil (dic. 2024) — <1.000 km de Colombia",arb:["ZIKV","CHIKV","DENV","OROV (potencial)"],chars:[{t:"Lira en escutum (similar a Ae. aegypti s.s.)",k:false},{t:"Coloración pálida/amarillenta — escamas reducidas",k:true},{t:"Morfología NO diagnóstica sola — CONFIRMAR MOL.",k:true},{t:"Colecta en zona amazónica colombo-brasileña",k:false}],dx:"Indistinguible de Ae. aegypti s.s. solo por morfología (Ferreira-de-Freitas 2023). La denominación correcta es 'forma pálida' o 'var. queenslandensis' — ambas se usan en la literatura. Confirmación molecular OBLIGATORIA antes de reportar.",mol:"COI + microsatélites. Reportar a IIBT (Universidad de Córdoba, nmhoyos@correo.unicordoba.edu.co) o INS.",entry:"Corredor fluvial amazónico: Brasil→Colombia por ríos Putumayo/Amazonas. Leticia es nodo fronterizo prioritario. Macapá (dic 2024) a <1.000 km."},
+  unknown:{name:"Aedes sp.",auth:"",common:"Espécimen no identificable morfológicamente",ib:"#F1EFE8",ic:"#5F5E5A",risk:"b",rl:"Indeterminado",st:"Requiere identificación molecular",arb:[],chars:[{t:"Ningún carácter diagnóstico concordante",k:false},{t:"Posible espécimen dañado o especie nativa",k:false}],dx:"No satisface los caracteres de ninguna especie cubierta. Puede ser: espécimen dañado, especie nativa colombiana, o posible nueva especie invasora.",mol:"COI barcoding (LCO1490/HCO2198) → BOLD BIN + GenBank BLAST. Si identidad <97%, reportar al INS y al IIBT.",entry:"Conservar en etanol 95% a −20°C. Documentar: fecha, localidad GPS, hábitat, método de captura y colector."}
+};
+
+const PLATES={
+  albopictus:{src:"assets/species-plates/albopictus.png",title:"Lammina diagnostica integrada",copy:"Resumen visual de caracteres adultos y larvarios para contraste rapido en vigilancia."},
+  vittatus:{src:"assets/species-plates/vittatus.png",title:"Lammina diagnostica integrada",copy:"Plancha con caracteres del adulto y larva, util para triage rapido en escenarios de primera sospecha."},
+  mediovittatus:{src:"assets/species-plates/mediovittatus.png",title:"Lammina diagnostica integrada",copy:"Lammina de apoyo para diferenciarla de especies de Stegomyia en vigilancia caribena."},
+  koreicus:{src:"assets/species-plates/koreicus.png",title:"Lammina diagnostica integrada",copy:"Enfatiza el contraste con <em>Ae. japonicus</em> y el valor del tarso posterior."},
+  japonicus:{src:"assets/species-plates/japonicus.png",title:"Lammina diagnostica integrada",copy:"Integra caracteres adultos y larvarios relevantes para vigilancia anticipatoria."},
+  queenslandensis:{src:"assets/species-plates/queenslandensis.png",title:"Lammina diagnostica integrada",copy:"Apoya la sospecha morfologica, pero no reemplaza la confirmacion molecular obligatoria."}
+};
+
+/* ══ ESTADO ═══════════════════════════════════════════════ */
+let history=[],current=1;
+function choose(opt,id){
+  const s=K[id],ch=s[opt];
+  history.push({id,opt,label:(opt==='a'?s.a.t:s.b.t).substring(0,38)+'…'});
+  current=ch.n; render();
+  window.scrollTo({top:64,behavior:'smooth'});
+}
+function goBack(idx){
+  history=history.slice(0,idx);
+  current=idx===0?1:K[history[history.length-1].id][history[history.length-1].opt].n;
+  render();
+}
+function restart(){history=[];current=1;render();window.scrollTo({top:0,behavior:'smooth'});}
+
+/* ══ RENDER ═══════════════════════════════════════════════ */
+function rProg(){
+  const pct=typeof current==='string'?100:Math.min(Math.round(history.length/6*100),92);
+  return`<div class="pw" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><div class="pb" style="width:${pct}%"></div></div>`;
+}
+function rBC(){
+  if(!history.length)return'';
+  return'<div class="bc">'+history.map((h,i)=>`<span class="cr" onclick="goBack(${i})" role="button" tabindex="0">${h.label}</span><span class="sep"> › </span>`).join('')+'</div>';
+}
+function rStep(id){
+  const s=K[id];
+  const figs=s.figs.map(f=>`<div class="fi"><div class="fn">${f.n}</div>${f.s}<div class="fc">${f.c}</div></div>`).join('');
+  return`${rProg()}${rBC()}
+  <div class="sc">
+    <div class="sb">
+      <div class="sn">Carácter ${history.length+1}</div>
+      <div class="sq">${s.q}</div>
+      <div class="sd">${s.d}</div>
+    </div>
+    <div class="fa">
+      <div class="fl">Observe en el espécimen</div>
+      <div class="fg ${s.cols}">${figs}</div>
+    </div>
+    <div class="hw">
+      <div class="hb2">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="7" cy="7" r="6.5" stroke="var(--text3)" stroke-width="0.7"/><text font-family="sans-serif" font-size="9" fill="var(--text2)" x="7" y="11" text-anchor="middle">i</text></svg>
+        <span class="ht2">${s.h}</span>
+      </div>
+    </div>
+    <div class="ow">
+      <button class="op" onclick="choose('a',${id})"><span class="ol" aria-hidden="true">a</span><div><div class="ot">${s.a.t}</div>${s.a.s?`<div class="os">${s.a.s}</div>`:''}</div></button>
+      <button class="op" onclick="choose('b',${id})"><span class="ol" aria-hidden="true">b</span><div><div class="ot">${s.b.t}</div>${s.b.s?`<div class="os">${s.b.s}</div>`:''}</div></button>
+    </div>
+  </div>`;
+}
+function rRefs(spId){
+  const refs=REFS[spId]||[];
+  if(!refs.length)return'';
+  const items=refs.map(r=>`<div class="ref-item"><span class="ref-dot">·</span><span>${r.url?`<a href="${r.url}" target="_blank" rel="noopener" class="ref-link">${r.text}</a>`:`<span>${r.text}</span>`}<span class="ref-badge">${r.badge}</span></span></div>`).join('');
+  return`<div class="ref-section"><div class="ref-title">Referencias de identificación</div><div class="ref-list">${items}</div>${WRBU_KEYS_NOTE}</div>`;
+}
+function rResult(spId){
+  const sp=SP[spId];
+  const plate=PLATES[spId];
+  const rc=sp.risk==='e'?'te':sp.risk==='a'?'ta':sp.risk==='m'?'tm':'tb';
+  const arb=sp.arb.slice(0,3).map(v=>`<span class="tag tv">${v}</span>`).join('');
+  const chips=sp.chars.map(c=>`<span class="chip${c.k?' ck':''}">${c.t}</span>`).join('');
+  const ico=`<svg width="26" height="26" viewBox="0 0 26 26" fill="none"><ellipse cx="13" cy="16" rx="5" ry="8" fill="${sp.ic}" opacity="0.82"/><ellipse cx="13" cy="9" rx="3.5" ry="4.5" fill="${sp.ic}"/><line x1="8" y1="13" x2="2" y2="9.5" stroke="${sp.ic}" stroke-width="1.1"/><line x1="18" y1="13" x2="24" y2="9.5" stroke="${sp.ic}" stroke-width="1.1"/><line x1="8" y1="16" x2="1" y2="16" stroke="${sp.ic}" stroke-width="0.9"/><line x1="18" y1="16" x2="25" y2="16" stroke="${sp.ic}" stroke-width="0.9"/></svg>`;
+  const warn=spId==='queenslandensis'?`<div class="wn">Confirmación molecular OBLIGATORIA antes de reportar. Contactar IIBT (Universidad de Córdoba) o INS.</div>`:'';
+  return`${rProg()}${rBC()}
+  <div class="rc">
+    <div class="rt">
+      <div class="rh"><div class="si" style="background:${sp.ib}">${ico}</div><div><div class="rn"><em>${sp.name}</em></div><div class="rm">${sp.common}</div></div></div>
+      <div class="tg"><span class="tag ${rc}">${sp.rl}</span><span class="tag ts">${sp.st}</span>${arb}</div>
+      ${warn}
+      <div class="stl">Caracteres diagnósticos confirmados</div>
+      <div class="ch">${chips}</div>
+    ${plate?`<div class="plate-wrap"><div class="plate-card"><img src="${plate.src}" alt="Lamina diagnostica de ${sp.name}"/><div class="plate-meta"><div class="plate-title">${plate.title}</div><div class="plate-copy">${plate.copy}</div></div></div></div>`:''}
+    </div>
+    <div class="rnt"><div class="stl">Nota de identificación</div><div class="sbd">${sp.dx}</div></div>
+    ${rRefs(spId)}
+    <div class="rt">
+      <div class="stl">Confirmación molecular</div><div class="sbd">${sp.mol}</div>
+      <hr class="dv"/>
+      <div class="stl">Rutas de entrada a Colombia</div><div class="sbd">${sp.entry}</div>
+    </div>
+    <div class="ac"><button class="btn" onclick="restart()">← Nueva identificación</button><button class="btn" onclick="window.print()">Imprimir ficha</button></div>
+  </div>`;
+}
+function showTool(mode){
+  const atlas=document.getElementById('atlasView');
+  const key=document.getElementById('keyView');
+  const btnAtlas=document.getElementById('btnAtlas');
+  const btnKey=document.getElementById('btnKey');
+  const isAtlas=mode==='atlas';
+  atlas.classList.toggle('active',isAtlas);
+  key.classList.toggle('active',!isAtlas);
+  btnAtlas.classList.toggle('active',isAtlas);
+  btnKey.classList.toggle('active',!isAtlas);
+}
+function openZoom(src,alt){
+  const overlay=document.getElementById('zoomOverlay');
+  const img=document.getElementById('zoomImage');
+  const caption=document.getElementById('zoomCaption');
+  img.src=src;
+  img.alt=alt||'Zoomed figure';
+  caption.textContent=alt||'';
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeZoom(){
+  const overlay=document.getElementById('zoomOverlay');
+  const img=document.getElementById('zoomImage');
+  const caption=document.getElementById('zoomCaption');
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  img.src='';
+  img.alt='';
+  caption.textContent='';
+}
+function render(){
+  document.getElementById('app').innerHTML=typeof current==='string'?rResult(current):rStep(current);
+}
+document.addEventListener('keydown',e=>{if(e.target.classList.contains('cr')&&(e.key==='Enter'||e.key===' '))e.target.click();});
+document.addEventListener('click',e=>{
+  const img=e.target.closest('.figimg, .atlas-card img, .plate-card img');
+  if(img){
+    openZoom(img.getAttribute('src'),img.getAttribute('alt'));
+    return;
+  }
+  if(e.target.id==='zoomOverlay'||e.target.id==='zoomClose'){
+    closeZoom();
+  }
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&document.getElementById('zoomOverlay').classList.contains('open')){
+    closeZoom();
+  }
+});
+render();
+</script>
+</body>
+</html>
+
+
+
