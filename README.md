@@ -23,6 +23,12 @@ The key is intended as a rapid-use surveillance aid. It does not replace special
 
 Open `index.html` or `index-en.html` in a web browser, or access the GitHub Pages version once the repository is published.
 
+## Offline use
+
+For offline use, download the full repository as a ZIP file, extract it, keep all files and folders in the same directory structure, and open `index.html` or `index-en.html` in a web browser.
+
+The key will not work correctly if only the HTML file is downloaded without the associated `assets/` and `Planchas aedes/` folders.
+
 ## Project context
 
 This tool was developed as part of a manuscript on *Aedes albopictus* as a model for anticipatory surveillance of emerging non-native *Aedes* of tropical medicine relevance.
